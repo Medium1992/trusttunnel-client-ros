@@ -15,7 +15,7 @@ RUN set -eux; \
         grep "linux-$ARCH\.tar\.gz$"); \
     \
     curl -L "$URL" -o trusttunnel.tar.gz; \
-    tar -xzf trusttunnel.tar.gz; \
+    tar -xzf trusttunnel.tar.gz --strip-components=1; \
     \
     mkdir -p /final; \
     cp setup_wizard trusttunnel_client /final/; \
