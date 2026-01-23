@@ -22,6 +22,5 @@ RUN set -eux; \
     chmod +x /final/setup_wizard /final/trusttunnel_client /final/entrypoint.sh
 
 FROM alpine:latest 
-FROM ${TARGETOS}-${TARGETARCH}${TARGETVARIANT}
 COPY --from=package /final /
 ENTRYPOINT ["/entrypoint.sh"]
