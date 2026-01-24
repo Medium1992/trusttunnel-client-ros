@@ -34,7 +34,8 @@ patch_array() {
 }
 
 toml_array() {
-  printf '%s' "$1" | sed 's/,/", "/g; s/^/["/; s/$/"]/'
+  printf '%s' "$1" \
+    | sed 's/ *, */,/g; s/,/", "/g; s/^/["/; s/$/"]/'
 }
 
 remove_listener() {
