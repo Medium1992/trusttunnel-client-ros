@@ -5,6 +5,7 @@ CONFIG_DIR="/tt-config"
 ENDPOINT_CONFIG="$CONFIG_DIR/endpoint_config.toml"
 CLIENT_CONFIG="/trusttunnel_client.toml"
 
+LOGLEVEL="${LOGLEVEL:-info}"
 HAS_IPV6="${HAS_IPV6:-false}"
 
 patch_bool() {
@@ -75,6 +76,16 @@ EOF
 
 
 mkdir -p "$CONFIG_DIR"
+
+case "$LOGLEVEL" in
+  info|debug|trace) ;;
+  *)
+    echo "ERROR: invalid LOGLEVEL=$LOGLEVEL (allowed: info, debug, trace)"
+    exit 1
+    ;;
+esac
+
+patch_string "loglevel" "$LOGLEVEL" "$CLIENT_CONFIG"
 
 if [ -f "$ENDPOINT_CONFIG" ]; then
   echo "endpoint_config.toml found, forcing client config regeneration"
