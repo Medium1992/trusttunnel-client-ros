@@ -5,6 +5,7 @@
 # 🇷🇺 Описание на русском
 
 **trusttunnel-client-ros** — это Docker-контейнер на базе [**TrustTunnelClient**](https://github.com/TrustTunnel/TrustTunnelClient) для Mikrotik RouterOS.
+
 На сервере необходимо поднять [TrustTunnel](https://github.com/TrustTunnel/TrustTunnel) и сформировать [конфиг](https://github.com/TrustTunnel/TrustTunnel?tab=readme-ov-file#export-client-configuration) файл для клиента с именем `endpoint_config.toml`.
 
 ## Описание ENVs
