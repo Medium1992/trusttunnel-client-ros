@@ -85,8 +85,6 @@ case "$LOGLEVEL" in
     ;;
 esac
 
-patch_string "loglevel" "$LOGLEVEL" "$CLIENT_CONFIG"
-
 if [ -f "$ENDPOINT_CONFIG" ]; then
   echo "endpoint_config.toml found, forcing client config regeneration"
   rm -f "$CLIENT_CONFIG"
@@ -106,6 +104,8 @@ if [ ! -f "$CLIENT_CONFIG" ]; then
 else
   echo "Using existing trusttunnel_client.toml"
 fi
+
+patch_string "loglevel" "$LOGLEVEL" "$CLIENT_CONFIG"
 
 if [ -n "${HAS_IPV6+x}" ]; then
   patch_bool "has_ipv6" "$HAS_IPV6" "$CLIENT_CONFIG"
