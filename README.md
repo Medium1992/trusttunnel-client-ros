@@ -17,7 +17,7 @@ The container is configured through environment variables.
 All variables are optional unless otherwise specified.
 
 | Variable | Default | Description |
-|-----------|--------------|--------- -|
+|-----------|--------------|----------|
 | `LOGLEVEL` | `info` | Client logging level. Possible values: `info`, `debug`, `trace`. |
 | `LISTENER_TYPE` | `tun` | Listener type. `tun` — virtual TUN interface, `socks` — SOCKS5 proxy. |
 | `TUN_BOUND_IF` | — | Name of the network interface to which TUN will be bound. If not specified, it is determined automatically. |
