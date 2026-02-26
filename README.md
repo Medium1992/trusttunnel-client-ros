@@ -1,3 +1,5 @@
+trusttunnel added to mihomo, so repository to archive
+
 [English](/README.md) | [Russian](/README_RU.md)
 
 [Telegram group](https://t.me/+96HVPF3Ww6o3YTNi)
